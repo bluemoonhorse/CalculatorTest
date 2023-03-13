@@ -1,20 +1,45 @@
 import tkinter as tk
 calculation = ""
 
+
 def add_to_calculation(symbol):
-    pass
+    global calculation
+    calculation += str(symbol)
+    text_result.delete(1.0, "end")
+    text_result.insert(1.0, calculation)
+
 
 def evaluate_calculation():
-    pass
+    global calculation
+
+    try:
+        result = str(eval(calculation))
+        calculation = ""
+        text_result.delete(1.0, "end")
+        text_result.insert(1.0, calculation)
+
+    except:
+        clear_field()
+        text_result.insert(1.0, "Error")
+        pass
+
 
 def clear_field():
-    pass
+    global calculation
+    calculation = ""
+    text_result.delete(1.0, "end")
+
 
 
 
 # Create the root window
 root = tk.Tk()
 root.geometry("300x275")
+
+btn_1 = tk.Button(root, text="1", command= lambda: add_to_calculation(1), width=5, font=("Arial", 14))
+btn_1.grid(row=2, column=1)
+
+
 
 
 
