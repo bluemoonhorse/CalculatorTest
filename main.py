@@ -1,16 +1,31 @@
-import tkinter
+import tkinter as tk
+calculation = ""
+
+def add_to_calculation(symbol):
+    pass
+
+def evaluate_calculation():
+    pass
+
+def clear_field():
+    pass
+
+
 
 # Create the root window
-root = tkinter.Tk()
+root = tk.Tk()
+root.geometry("300x275")
+
+
 
 # Set title of the window
-root.title('GUI Window')
+root.title("CalculatorTest")
+text_result = tk.Text(root, height=2, width=16, font=("Arial", 24))
+text_result.grid(columnspan=5)
 
-# Create a label
-label = tkinter.Label(root, text='Welcome to GUI Window', font=("Times New Roman", 20))
 
-# Position the label on the center of the window
-label.pack(fill="both", expand=1)
+
+
 
 # Execute the main loop
 root.mainloop()
